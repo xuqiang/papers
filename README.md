@@ -6,4 +6,4 @@
 
 
 
-<img src="payme.png" style="width:150px">
+<img src="payme.png" style="width:100px">
