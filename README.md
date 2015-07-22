@@ -4,7 +4,10 @@
 4. classfication-and-regression-tree.pdf
 5. vc dimension && svm tutorial <http://research.microsoft.com/pubs/67119/svmtutorial.pdf>
 6. 用户兴趣建模 user profile : Gender and Interest Targeting for Sponsored Post Advertising at Tumblr 
-7. 点击率预估相关的论文
-
+7. 点击率预估位置偏差 click over expected click; 训练数据只是用有过一次点击的pv
+8. 一次展现ad之间相互影响
+9. 个性化特征
+10. fb ctr论文：gbdt+lr
+11. google论文：FTRL
 
 <img src="payme.png" style="width:100px">
