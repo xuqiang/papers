@@ -1,0 +1,51 @@
+DocumentWordTopicsPB 每个文档的词 和 该文档中没个词对应的topicid
+
+
+文档语料的表示方式：
+LDACorpus -> 多个LDADocument（DocumentWordTopicsPB）
+
+
+LDADocument包含 topic的分布
+	DocumentWordTopicsPB*  topic_assignments_; 初始化为DocumentWordTopicsPB
+	vector<int64> topic_distribution_; 初始化为topic num大小
+	
+	WordOccurrenceIterator
+		LDADocument* parent_; 
+		int word_index_;
+
+DocumentWordTopicsPB
+	vector<string> words_s_; 文档中所有出现的词
+	vector<int> words_; 文档中的词的索引
+	vector<int32> wordtopics_; 文档中每个词的topic 如果一个文档中有多个相同的词(bag of words)，这每个词可能是属于不同的topic
+	vector<int> wordtopics_start_index_; 具体含义如下：
+		// The document: WORDS1:4  WORD2:2 WORD3:1
+  		// words_:                     WORD1 WORD2  WORD3
+  		// wordtopics_start_index_:     |       \      |
+  		// wordtopics_:                 0 3 4 0  0 3   1
+
+
+
+模型的表示方式：
+LDAModel
+	
+	vector<int64> memory_alloc_;
+	vector<int64> zero_distribution_; 如果查询一个词 不在训练预料中出现 返回zero distribution
+	vector<TopicCountDistribution> topic_distributions_; topic_distributions_["word"][k] gibbs sample中这个词付给topic k的次数。使用方法：topic_distributions_[word][topic] += count;
+
+		TopicCountDistribution int64数组
+
+	TopicCountDistribution global_distribution_; 全局分布 global_distribution_[k]表明整个的训练预料中是topic k的词的次数
+	word_index_map：词的明文  到 词索引的映射关系
+
+LDAAccumulativeModel
+	
+	vector<TopicProbDistribution> topic_distributions_; p(word | topic)
+	TopicProbDistribution global_distribution_; p(topic)
+
+
+初始化：
+
+
+
+
+	
