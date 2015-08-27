@@ -9,5 +9,5 @@
 9. 个性化特征
 10. fb ctr论文：gbdt+lr
 11. google论文：FTRL
+12. online learning 在线学习 ./optimization/online-learning-and-online-convex-optimization.pdf
 
-<img src="payme.png" style="width:100px">
