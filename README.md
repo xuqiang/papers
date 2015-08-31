@@ -10,4 +10,5 @@
 10. fb ctr论文：gbdt+lr
 11. google论文：FTRL
 12. online learning 在线学习 ./optimization/online-learning-and-online-convex-optimization.pdf
+13. 如何决定query是否展现广告 yahoo的 ./computational-advertising/to-swing-ornot-to-swing-learning-when-to-advertise.pdf
 
